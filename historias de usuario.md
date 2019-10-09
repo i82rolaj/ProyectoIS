@@ -1,6 +1,7 @@
-#Historias de usuario  
+# Historias de usuario  
 
-##Registro de los pacientes
+## Registro de los pacientes
+
 **ID:**  01
 
 **Nombre:**   usuario con nombre y apellidos
@@ -21,7 +22,8 @@
 
 -Se deben mostrar los datos personales del paciente.
 
-##Registro de las citas
+## Registro de las citas
+
 **Id:**  02
 
 **Nombre:** nombre y apellidos del usuario.
@@ -46,7 +48,7 @@
 
 -Se debe mostrar el motivo de la cita.
 
-##Control de citas por pacientes
+## Control de citas por pacientes
 
 **Id:**  03
 
@@ -63,7 +65,7 @@
 **Validación:**
 -Cada paciente solo puede tener una cita solicitada.
 
-##Historial del paciente
+## Historial del paciente
 
 **Id:**  04
 
@@ -88,7 +90,7 @@
 
 -Se debe mostrar si el paciente ha tenido algún tipo de lesión o enfermedad.
 
-##Registro del tratamiento
+## Registro del tratamiento
 
 **Id:**  05
 
