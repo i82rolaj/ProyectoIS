@@ -1,1 +1,1 @@
-![Diagrama casos de uso](https://i.imgur.com/TvNygJS.png)
+![Diagrama casos de uso](https://imgur.com/a/8DebVdh)
