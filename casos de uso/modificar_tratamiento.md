@@ -1,22 +1,22 @@
 *Modificar tratamiento*  
 
 **ID:** 08  
-**Descripción:** Se modifica la información del tratamiento requerido.  
+**Descripción:** Se modifica la información del tratamiento actual del paciente.  
 
 **Actores principales:** Secretario.  
 
 **Actores secundarios:** Paciente.  
 
-**Precondiciones:** Que exista un determinado paciente con uno o varios tratamientos asignados por la Dra.  
+**Precondiciones:** Que exista un determinado paciente con tratamiento en curso.  
 
 **Flujo principal:**  
 
-1. El secretario introduce el identificador de un tratamiento determinado en un cuadro de búsqueda.
-2. El secretario introduce en un formulario la nueva información acerca de ese tratamiento.
-3. El tratamiento queda registrado con la nueva información modificada.  
+1. El secretario introduce el nombre y apellidos del paciente en un cuadro de búsqueda.
+2. El sistema muestra el tratamiento en curso.
+3. El secretario modifica la información referente al actual tratamiento del paciente.  
 
 **Postcondición:** El tratamiento ve modificados sus datos y queda reflejada la nueva información.  
 
 **Flujos alternativos:**  
 
-1.a: Si el secretario se equivoca al buscar el tratamiento y no existe el sistema arrojará mensaje de error.
+2.a: Si el paciente no tiene ningún tratamiento en curso el sistema mostrará un mensaje que lo indique.
