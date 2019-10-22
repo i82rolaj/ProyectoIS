@@ -11,7 +11,7 @@
 
 **Flujo principal:**  
 
-1. El secretario introduce en un cuadro de búsqueda el nombre y apellido de un paciente.
+1. El secretario introduce en un cuadro de búsqueda el nombre y apellidos de un paciente.
 2. El secretario introduce en un formulario la nueva entrada acerca del historial de ese paciente. 
 
 **Postcondición:** El historial médico del paciente queda modificado y ampliado.  
