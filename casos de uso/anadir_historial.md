@@ -2,7 +2,7 @@
 
 **ID:** 09  
 
-**Descripción:** Se registra un historial médico del paciente de nueva alta para registrarlo en la base de datos asociándolo a dicho paciente.  
+**Descripción:** Se registra un historial médico del paciente de nueva alta para registrarlo en la base de datos asociándolo a dicho paciente.
 
 **Actores principales:** Secretario y paciente.  
 
@@ -21,5 +21,4 @@
 **Flujos alternativos:**  
 
 3.a: Si hay algún campo incorrecto el sistema arrojará error.
-3.b: Si se intenta introducir un tratamiento a un paciente que ya disponga de uno el sistema arrojará error. Cada paciente tiene un único historial médico (modificable).
-
+3.b: Si se intenta introducir un historial a un paciente que ya disponga de uno el sistema arrojará error. Cada paciente tiene un único historial médico (modificable).
