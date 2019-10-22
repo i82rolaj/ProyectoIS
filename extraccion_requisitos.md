@@ -22,7 +22,8 @@
     - Nombre del paciente
     - Diagnóstico
     - Medicación
-    - Duración
+    - Fecha de inicio
+    - Fecha de finalización
 
 * Historial del paciente  
     - Alergias
@@ -33,17 +34,17 @@
 ##Requisitos funcionales (ordenados por prioridad)  
 1. Añadir nuevo paciente  
 2. Añadir nueva cita  
-3. Mostrar lista de citas disponibles 
+3. Listar citas del día
 4. Mostrar lista de pacientes  
 5. Modificar datos del paciente  
-6. Modificar datos de cita  
+6. Buscar usuario por nombre y apellidos  
 7. Añadir historial del paciente  
-8. Mostrar historial del paciente  
-9. Modificar historial del paciente  
+8. Modificar historial del paciente  
+9. Cancelar cita
 10. Añadir tratamiento al paciente  
-11. Mostrar lista de tratamientos del paciente  
-12. Modificar tratamiento del paciente  
-13. Eliminar cita  
+11. Mostrar citas de paciente  
+12. Modificar tratamiento actual del paciente  
+13. Modificar datos de cita  
 14. Eliminar paciente  
 
 ##Requisitos no funcionales  
