@@ -1,6 +1,6 @@
 *Buscar usuario por nombre y apellidos*
 
-**ID:** 13  
+**ID:** 12  
 **Descripción:** Se busca en la base de datos la información de un paciente introduciendo nombre+apellidos.
 
 **Actores principales:** Secretario
