@@ -19,4 +19,5 @@
 **Flujos alternativos:**
 
 1.a: Si el secretario introduce los datos incorrectamente o el paciente no está registrado en el sistema se devolverá un mensaje de error.
+
 1.b: Si el secretario introduce únicamente nombre o apellidos se mostrará un listado con todos los pacientes con ese nombre o con esos apellidos, no uno concretamente.
