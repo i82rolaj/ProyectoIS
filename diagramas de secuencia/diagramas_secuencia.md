@@ -10,7 +10,7 @@
 ![](https://i.imgur.com/b6y8dfp.jpg)
 
 ## Añadir paciente  
-![](https://i.imgur.com/cxYIj0W.jpg)
+![](https://i.imgur.com/nEtKKPm.jpg)
 
 ## Añadir tratamiento  
 ![](https://i.imgur.com/0Sc2USm.jpg)
