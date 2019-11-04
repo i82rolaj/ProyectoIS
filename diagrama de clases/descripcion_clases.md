@@ -22,11 +22,17 @@ Cada instancia de paciente tendrá asociada ninguna o muchas instancias de la cl
 Por último, cada paciente puede tener asociada una y solo una cita, pero si el paciente borra la cita no deja de existir ya que puede ser reservada por otro paciente diferente.
 
 operaciones: 
+
 -anadir_paciente()
+
 -borrar_paciente()
+
 -buscar_paciente()
+
 -listar_paciente()
+
 -modificar_paciente()
+
 -mostrar_cita_paciente()
 
 **HISTORIAL_MEDICO:** Cada instancia de esta clase refleja el historial médico de uno y solo un paciente. No tendrá operaciones miembro, únicamente los siguientes atributos:
@@ -42,7 +48,9 @@ problemas_cardiacos: boolean
 otros: string
 
 operaciones:
+
 -actualizar_historial()
+
 -anadir_historial()
 
 **CITA:** Cada instancia de esta clase refleja una hora de un día disponible para ser asignada a una y solo una instancia de paciente. No dispone de operaciones miembro y sus astributos son los siguientes:
@@ -54,9 +62,13 @@ hora: string
 motivo_consulta: char
 
 operaciones:
+
 -anadir_cita()
+
 -cancelar_cita()
+
 -modificar_cita()
+
 -modificar_cita_paciente()
 
 **TRATAMIENTO:** Cada instancia de esta clase se relaciona con una y solo una instancia de Paciente (un tratamiento determinado pertenece a un único paciente). No dispone de operaciones miembro y sus atributos son los siguientes:
@@ -72,5 +84,7 @@ fecha_fin: string
 observaciones: string
 
 operaciones:
+
 -anadir_tratamiento()
+
 -modificar_tratamiento()
