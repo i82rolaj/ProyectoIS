@@ -18,8 +18,9 @@ public:
 	bool borrar_paciente();
 	bool modificar_paciente();
 	void listar_pacientes();
-};
 
+
+};
 bool buscar_paciente(string nombreapellidos);
 
 #endif

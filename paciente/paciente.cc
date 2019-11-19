@@ -13,7 +13,7 @@ Paciente::Paciente(string nombreapellidos,string sexo,string fechanacimiento,int
 	procedencia_=procedencia;
 }
 
-bool Paciente::buscar_paciente(string nombreapellidos){
+bool buscar_paciente(string nombreapellidos){
 	ifstream f("pacientes.txt"); //abre fichero con lectura
 	char NOMAP[30],SEX[10],FECHA[20],TEL[20],DOM[30],PROC[20];	
 	Paciente aux("Paciente Auxiliar","H","00/00/00",0000); 
@@ -54,6 +54,6 @@ bool Paciente::anadir_paciente(){
 	else
 	{
 		cout<<"ERROR. Ese paciente ya existe.\n";
-		exit(EXIT_FAILURE);
+	
 	}
 }
