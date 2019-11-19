@@ -13,19 +13,47 @@ Paciente::Paciente(string nombreapellidos,string sexo,string fechanacimiento,int
 	procedencia_=procedencia;
 }
 
-bool Paciente::anadir_paciente(){
-	fstream f("pacientes.txt",ios::in);
-	if (!f)
+bool Paciente::buscar_paciente(string nombreapellidos){
+	ifstream f("pacientes.txt"); //abre fichero con lectura
+	char NOMAP[30],SEX[10],FECHA[20],TEL[20],DOM[30],PROC[20];	
+	Paciente aux("Paciente Auxiliar","H","00/00/00",0000); 
+	while(f.getline(NOMAP,30,','))
 	{
-		cout<<"ERROR. No se pudo añadir el paciente.\n";
-		return false;
+		f.getline(SEX,10,',');
+		f.getline(FECHA,20,',');
+		f.getline(TEL,20,',');
+		f.getline(DOM,30,',');
+		f.getline(PROC,20,'\n');
+		
+		if (string(NOMAP).compare(nombreapellidos)==0)
+			return true;
+		
+	}
+	f.close();
+	return false;
+}
+
+bool Paciente::anadir_paciente(){
+	if (buscar_paciente(nombreapellidos_)==false)
+	{
+		fstream f("pacientes.txt",ios::in);
+		if (!f)
+		{
+			cout<<"ERROR. No se pudo añadir el paciente.\n";
+			return false;
+		}
+		else
+		{
+			f.close();
+			fstream f("pacientes.txt",ios::out|ios::app);
+			f<<nombreapellidos_<<","<<sexo_<<","<<fechanacimiento_<<","<<telefono_<<","<<domicilio_<<","<<procedencia_<<"\n";
+			f.close();
+		}
+		return true;
 	}
 	else
 	{
-		f.close();
-		fstream f("pacientes.txt",ios::out|ios::app);
-		f<<nombreapellidos_<<","<<sexo_<<","<<fechanacimiento_<<","<<telefono_<<","<<domicilio_<<","<<procedencia_<<"\n";
-		f.close();
+		cout<<"ERROR. Ese paciente ya existe.\n";
+		exit(EXIT_FAILURE);
 	}
-	return true;
 }
