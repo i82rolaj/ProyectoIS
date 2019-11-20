@@ -1,6 +1,8 @@
 #include "paciente.h"
 #include "historial.h"
+#include "tratamiento.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main(){
@@ -14,4 +16,8 @@ int main(){
 	string nombre="Juanfran Romero";
 	Historial h1("29/11/19","asma leve","operacion del corazon","false","false");
 	h1.anadir_historial(nombre);
+	
+	cout<<"Creando tratamiento..\n";
+	Tratamiento t1("Juanfran Romero","Muela con infeccion","Amoxicilina y Enantym","19/11/2019","5/12/2019","Quiste en una muela del paladar superior");
+	t1.anadir_tratamiento();
 }
