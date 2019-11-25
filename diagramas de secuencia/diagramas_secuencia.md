@@ -1,8 +1,5 @@
 # Diagramas de secuencia
 
-## Actualizar historial  
-![](https://i.imgur.com/5rvkYhg.jpg)
-
 ## Añadir cita  
 ![](https://i.imgur.com/RrnjTnO.jpg)
 
