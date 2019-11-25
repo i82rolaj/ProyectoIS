@@ -243,31 +243,6 @@
 
 
 
-**Id:**  10
-
-**Nombre:**  actualizar historial.
-
-**Prioridad:**  7
-
-**Puntos Estimados:**  3
-
-**Iteración:**  1
-
-**Responsables:**  Juan Francisco Romero Lavirgen, Antonio Jesús Romero Pintado, Sofía Salas Ruíz.
-
-**Descripción:**  Como secretario quiero modificar el historial del paciente para poder añadir nueva información.
-
-**Validación:**
-
--Se debe buscar a los pacientes usando nombre y los dos apellidos para poder modificar el historial.
-
--Poder  introducir nuevas alergías, enfermedades, operaciones, problemas respiratorios y otros.
-
--No se debe podrá el historial del paciente.
-
-
-
-
 **Id:**  11
 
 **Nombre:**  Listar pacientes
