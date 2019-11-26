@@ -6,18 +6,55 @@
 using namespace std;
 
 int main(){
-	cout<<"Creando paciente..\n";
-	//Paciente p1("Pepe Sanchez","Hombre","09/04/00",6666778);
-	Paciente p2("Juanfran Romero","Hombre","01/12/98",627085701,"Ronda Ronda 34");
-	//p1.anadir_paciente();
-	p2.anadir_paciente();
+	Paciente p("Aux","M","00/00/00",666666666);
 	
+	int opcion=0;
+	while(opcion!=3)
+	{
+		cout<<"Elige una opción:\n";
+		cout<<"1. Añadir paciente.\n";
+		cout<<"2. Borrar paciente.\n";
+		cout<<"3. Salir\n";
 
-	string nombre="Juanfran Romero";
-	Historial h1("29/11/19","asma leve","operacion del corazon","false","false");
-	h1.anadir_historial(nombre);
-	
-	cout<<"Creando tratamiento..\n";
-	Tratamiento t1("Juanfran Romero","Muela con infeccion","Amoxicilina y Enantym","19/11/2019","5/12/2019","Quiste en una muela del paladar superior");
-	t1.anadir_tratamiento();
+		cin>>opcion;
+		switch(opcion)
+		{
+			case 1:
+			{
+				string nombreapellidos,sexo,fecha,domicilio,procedencia;
+				int telefono;
+				
+				cout<<"NOMBRE y APELLIDOS: ";
+				cin.ignore();
+				getline(cin,nombreapellidos);
+				cout<<"\nSEXO: ";
+				cin>>sexo;
+				cout<<"\nFECHA: ";
+				cin>>fecha;
+				cout<<"\nTELEFONO: ";
+				cin>>telefono;
+				cout<<"\nDOMICILIO: ";
+				cin.ignore();
+				getline(cin,domicilio);
+				cout<<"\nPROCEDENCIA: ";
+				cin.ignore();
+				getline(cin,procedencia);
+				cout<<"\n";
+				
+				Paciente p1(nombreapellidos,sexo,fecha,telefono,domicilio,procedencia);
+				p1.anadir_paciente();
+			}
+			break;
+
+			case 2:
+			{
+				string pacbor;
+				cout<<"\nNOMBRE: ";
+				cin.ignore();
+				getline(cin,pacbor);
+				p.borrar_paciente(pacbor);
+			}
+			break;
+		}
+	}	
 }
