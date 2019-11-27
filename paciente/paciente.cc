@@ -1,6 +1,6 @@
 #include "paciente.h"
 #include <fstream>
-#include <string>
+#include <cstring>
 #include <iostream>
 using namespace std;
 
@@ -85,4 +85,92 @@ bool Paciente::borrar_paciente(string nombrecompleto){
 		cout<<"ERROR. Ningún paciente con ese nombre.\n";
 	}
 	return false;
+}
+
+void Paciente::listar_pacientes()
+{
+	char nombre[50],sexo[10],domicilio[20],telefono[10],fechanacimiento[15], observaciones[100],fecha[10];
+	char nombreaux[50],nombreaux2[50],fechaInicio[10],fechaFin[10],observacionesT[20],medicacion[30],diagnostico[50];
+	
+	ifstream fichPaciente("pacientes.txt");
+	if(fichPaciente.fail())
+	{
+		cout<<"No se pudo abrir el fichero"<<endl;
+		exit(-1);
+	}
+	
+
+	while(fichPaciente.getline(nombre,50,','))
+	{
+		
+		fichPaciente.getline(sexo,10,',');
+		fichPaciente.getline(fechanacimiento,15,',');
+		fichPaciente.getline(telefono,10,',');
+		fichPaciente.getline(domicilio,20,'\n');
+		
+
+			ifstream fichTratamiento("tratamiento.txt");
+		if(fichTratamiento.fail())
+		{
+			cout<<"Error al abrir el fichero del historial"<<endl;
+			exit(-1);
+		}
+		while(!fichTratamiento.eof())
+		{	
+			fichTratamiento.getline(nombreaux2,50,',');
+			fichTratamiento.getline(diagnostico,50,',');
+			fichTratamiento.getline(medicacion,30,',');
+			fichTratamiento.getline(fechaInicio,10,',');
+			fichTratamiento.getline(fechaFin,10,',');
+			fichTratamiento.getline(observacionesT,20,'\n');
+			if(strcmp(nombre,nombreaux2)==0)
+			{
+				cout<<"-------------------------------"<<endl;
+				cout<<"DATOS PERSONALES DEL PACIENTE:"<<endl;
+				cout<<"Nombre: "<<string(nombre)<<endl;
+				cout<<"Sexo: "<<string(sexo)<<endl;
+				cout<<"Fecha nacimiento: "<<string(fechanacimiento)<<endl;
+				cout<<"Telefono: "<<string(telefono)<<endl;
+				cout<<"Domicilio: "<<string(domicilio)<<endl;
+				cout<<"\nTRATAMIENTO DEL PACIENTE:"<<endl;
+				cout<<"Diagnostico: "<<string(diagnostico)<<endl;
+				cout<<"Medicacion: "<<string(medicacion)<<endl;
+				cout<<"Fecha de inicio de la medicacion: "<<string(fechaInicio)<<endl;
+				cout<<"Fecha fin de la medicacion: "<<string(fechaFin)<<endl;
+				cout<<"observaciones: "<<string(observacionesT)<<endl;
+			}
+
+	
+		}	
+		fichTratamiento.close();
+						
+		ifstream fichHistorial("historial.txt");
+		if(fichHistorial.fail())
+		{
+			cout<<"Error al abrir el fichero del historial"<<endl;
+			exit(-1);
+		}
+
+		while(!fichHistorial.eof())
+		{				fichHistorial.getline(nombreaux,50,',');
+						fichHistorial.getline(observaciones,100,',');
+						fichHistorial.getline(fecha,10,'\n');		
+
+			if(strcmp(nombre,nombreaux)==0)
+				{
+						
+						cout<<"\nHISTORIAL DEL PACIENTE:"<<endl;
+						cout<<"Observaciones: "<<string(observaciones)<<endl;
+						cout<<"Fecha: "<<string(fecha)<<endl;
+
+				}
+
+					
+		}	
+		fichHistorial.close();
+
+	
+		}
+		fichPaciente.close();
+
 }
