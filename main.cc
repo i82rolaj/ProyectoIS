@@ -8,6 +8,7 @@ using namespace std;
 int main(){
 	Paciente p("Aux","M","00/00/00",666666666);
 	Tratamiento t("Aux",1,"D","M","00/00/00","00/00/00","O");
+	Historial h("M","00/00/00");
 	
 	int opcion=0;
 	while(opcion!=5)
@@ -17,7 +18,9 @@ int main(){
 		cout<<"2. Borrar paciente.\n";
 		cout<<"3. Añadir tratamiento.\n";
 		cout<<"4. Modificar tratamiento.\n";
-		cout<<"5. Salir.\n";
+		cout<<"5. Añadir historial.\n";
+		cout<<"6. Mostrar lista pacientes.\n";
+		cout<<"7. Salir.\n";
 
 		cin>>opcion;
 		switch(opcion)
@@ -99,6 +102,29 @@ int main(){
 				cin.ignore();
 				getline(cin, tacmod);
 				t.modificar_tratamiento(tacmod);
+			}
+			break;
+
+			case 5:
+			{
+				string nombre, observaciones, fecha;
+				cout<<"NOMBRE y APELLIDOS: ";
+				cin.ignore();
+				getline(cin,nombre);
+				cout<<"OBSERVACIONES: ";
+				cin.ignore();
+				getline(cin,observaciones);
+				cout<<"FECHA: ";
+				cin>>fecha;
+				Historial h1(observaciones,fecha);
+				h1.anadir_historial(nombre);
+			}
+			break;
+
+			case 6:
+			{
+				
+				p.listar_pacientes();
 			}
 			break;
 		}
