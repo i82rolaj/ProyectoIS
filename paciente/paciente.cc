@@ -174,3 +174,74 @@ void Paciente::listar_pacientes()
 		fichPaciente.close();
 
 }
+
+bool Paciente::modificar_paciente(string nombrecompleto)
+{
+	char nombre[50],sexo[10],fechanaci[10],domicilio[20],telefono[10],procedencia[15];
+	
+	if(buscar_paciente(nombrecompleto)==false)
+	{
+		cout<<"ERROR, no se ha encontrado el paciente en la base de datos"<<endl;
+		return false;
+	}
+	else
+	{
+		cout<<"Introduce los nuevos datos del paciente"<<endl;
+		cout<<"SEXO: ";
+		cin.ignore();
+		getline(cin,sexo_);
+		cout<<"FECHA NACIMIENTO: ";
+		cin.ignore();
+		getline(cin,fechanacimiento_);
+		cout<<"DOMICILIO: ";
+		cin.ignore();
+		getline(cin,domicilio_);
+		cout<<"TELEFONO:";
+		cin>>telefono_;
+		cout<<"PROCEDENCIA: ";
+		cin.ignore();
+		getline(cin,procedencia_);
+		fstream viejo("pacientes.txt",ios::in);
+		ofstream nuevo("aux.txt",ios::trunc);
+
+		if(!nuevo||!viejo)
+		{
+			cout<<"ERROR,no se pudo abrir el fichero"<<endl;
+			return false;
+		}
+		else
+		{
+			while(viejo.getline(nombre,50,','))
+			{
+				
+				
+				viejo.getline(sexo,10,',');
+				viejo.getline(fechanaci,10,',');
+				viejo.getline(telefono,10,',');
+				viejo.getline(domicilio,10,',');
+				viejo.getline(procedencia,15,'\n');
+
+				if(string(nombre).compare(nombrecompleto)==0)
+				{
+					
+					nuevo<< nombrecompleto<<", "<< sexo_<<", "<< fechanacimiento_<<", "<< telefono_<<", "<< domicilio_<<", "<< procedencia_<< "\n";
+					
+				}
+				else
+				{
+					nuevo<< string(nombre)<<", "<< string(sexo)<<", "<< string(fechanaci)<<", "<< string(telefono)<<", "<< string(domicilio)<<", "<< string(procedencia)<<" \n";
+				}
+				
+				
+			}
+			viejo.close();
+			nuevo.close();
+			remove("pacientes.txt");
+			rename("aux.txt","pacientes.txt");
+
+
+		}
+	}
+	cout<<"Paciente modificado"<<endl;
+	return true;
+}
