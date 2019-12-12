@@ -7,7 +7,7 @@ using namespace std;
 
 int main(){
 	Paciente p("Aux","M","00/00/00",666666666);
-	Tratamiento t("Aux",1,"D","M","00/00/00","00/00/00","O");
+	Tratamiento t(1,"Aux","D","M","00/00/00","00/00/00","O");
 	Historial h("M","00/00/00");
 	
 	int opcion=0;
@@ -90,7 +90,7 @@ int main(){
 				cin.ignore();
 				getline(cin,observaciones);
 
-				Tratamiento t1(nombrepaciente_t,en_curso,diagnostico,medicacion,fecha_inicio,fecha_fin,observaciones);
+				Tratamiento t1(en_curso,nombrepaciente_t,diagnostico,medicacion,fecha_inicio,fecha_fin,observaciones);
 				t1.anadir_tratamiento();
 			}
 			break;
