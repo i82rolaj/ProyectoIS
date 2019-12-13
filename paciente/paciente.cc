@@ -89,7 +89,7 @@ bool Paciente::borrar_paciente(string nombrecompleto){
 
 void Paciente::listar_pacientes()
 {
-	char nombre[50],sexo[10],domicilio[20],telefono[10],fechanacimiento[15], observaciones[100],fecha[10];
+	char nombre[50],sexo[10],domicilio[20],telefono[10],fechanacimiento[15], nacionalidad[15], observaciones[100],fecha[10];
 	char nombreaux[50],nombreaux2[50],fechaInicio[10],fechaFin[10],observacionesT[20],medicacion[30],diagnostico[50];
 	
 	ifstream fichPaciente("pacientes.txt");
@@ -106,10 +106,10 @@ void Paciente::listar_pacientes()
 		fichPaciente.getline(sexo,10,',');
 		fichPaciente.getline(fechanacimiento,15,',');
 		fichPaciente.getline(telefono,10,',');
-		fichPaciente.getline(domicilio,20,'\n');
-		
+		fichPaciente.getline(domicilio,20,',');
+		fichPaciente.getline(nacionalidad,15,'\n');		
 
-			ifstream fichTratamiento("tratamiento.txt");
+		ifstream fichTratamiento("tratamientos.txt");
 		if(fichTratamiento.fail())
 		{
 			cout<<"Error al abrir el fichero del historial"<<endl;
@@ -132,6 +132,7 @@ void Paciente::listar_pacientes()
 				cout<<"Fecha nacimiento: "<<string(fechanacimiento)<<endl;
 				cout<<"Telefono: "<<string(telefono)<<endl;
 				cout<<"Domicilio: "<<string(domicilio)<<endl;
+				cout<<"Nacionalidad: "<<string(nacionalidad)<<endl;				
 				cout<<"\nTRATAMIENTO DEL PACIENTE:"<<endl;
 				cout<<"Diagnostico: "<<string(diagnostico)<<endl;
 				cout<<"Medicacion: "<<string(medicacion)<<endl;
@@ -144,7 +145,7 @@ void Paciente::listar_pacientes()
 		}	
 		fichTratamiento.close();
 						
-		ifstream fichHistorial("historial.txt");
+		ifstream fichHistorial("historiales.txt");
 		if(fichHistorial.fail())
 		{
 			cout<<"Error al abrir el fichero del historial"<<endl;
