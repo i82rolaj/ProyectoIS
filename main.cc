@@ -4,6 +4,7 @@
 #include "cita.h"
 #include <iostream>
 #include <string>
+#include <cstdio>
 using namespace std;
 
 int main(){
@@ -32,8 +33,9 @@ int main(){
 		{
 			case 1:
 			{
-				string nombreapellidos,sexo,fecha,domicilio,procedencia;
+				//char nombreapellidos[100],sexo[1],fecha[10],domicilio[30],procedencia[30];
 				int telefono;
+				string nombreapellidos,sexo,fecha,domicilio,procedencia;
 				
 				cout<<"NOMBRE y APELLIDOS: ";
 				cin.ignore();
@@ -41,15 +43,15 @@ int main(){
 				cout<<"\nSEXO: ";
 				cin>>sexo;
 				cout<<"\nFECHA: ";
-				cin>>fecha;
+				cin.ignore();
+				getline(cin,fecha);
 				cout<<"\nTELEFONO: ";
 				cin>>telefono;
 				cout<<"\nDOMICILIO: ";
 				cin.ignore();
 				getline(cin,domicilio);
 				cout<<"\nPROCEDENCIA: ";
-				cin.ignore();
-				getline(cin,procedencia);
+				cin>>procedencia;
 				cout<<"\n";
 				
 				Paciente p1(nombreapellidos,sexo,fecha,telefono,domicilio,procedencia);
@@ -129,6 +131,7 @@ int main(){
 
 			case 6:
 				p.listar_pacientes();
+			break;
 				
 			case 7:
 			{
