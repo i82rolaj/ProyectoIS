@@ -1,5 +1,6 @@
 #ifndef CITA_H
 #define CITA_H
+#include <cstring>
 #include <string>
 
 using namespace std;
@@ -11,12 +12,12 @@ private:
 	int hora_;
 	string motivo_consulta_;
 public:
-	Cita(string nombrepaciente_c, string fecha, int hora, string motivo_consulta);
-	bool anadir_cita();
+	Cita(){};
+	bool anadir_cita(int dia,int hora,string paciente);
 	bool borrar_cita(string nombrecompleto);
-	bool modificar_cita(strig nombrecompleto);
+	bool modificar_cita(string nombrecompleto);
 	bool mostrar_cita_paciente(string nombrecompleto);
-	bool listar_citas_hoy(string nombrecompleto);
-}
+	void listar_citas_hoy();
+};
 
 #endif
