@@ -1,17 +1,19 @@
 #include "paciente.h"
 #include "historial.h"
 #include "tratamiento.h"
+#include "cita.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
 int main(){
 	Paciente p("Aux","M","00/00/00",666666666);
-	Tratamiento t("Aux",1,"D","M","00/00/00","00/00/00","O");
+	Tratamiento t(1,"aux","D","M","00/00/00","00/00/00","O");
 	Historial h("M","00/00/00");
+	Cita c;
 	
 	int opcion=0;
-	while(opcion!=5)
+	while(opcion!=10)
 	{
 		cout<<"Elige una opción:\n";
 		cout<<"1. Añadir paciente.\n";
@@ -20,8 +22,10 @@ int main(){
 		cout<<"4. Modificar tratamiento.\n";
 		cout<<"5. Añadir historial.\n";
 		cout<<"6. Mostrar lista pacientes.\n";
-		cout<<"7. Modificar paciente.\n";
-		cout<<"8. Salir.\n";
+		cout<<"7. Anadir cita.\n";
+		cout<<"8. Citas de hoy.\n";
+		cout<<"9. Modificar paciente.\n";
+		cout<<"10. Salir.\n";
 
 		cin>>opcion;
 		switch(opcion)
@@ -91,7 +95,7 @@ int main(){
 				cin.ignore();
 				getline(cin,observaciones);
 
-				Tratamiento t1(nombrepaciente_t,en_curso,diagnostico,medicacion,fecha_inicio,fecha_fin,observaciones);
+				Tratamiento t1(en_curso,nombrepaciente_t,diagnostico,medicacion,fecha_inicio,fecha_fin,observaciones);
 				t1.anadir_tratamiento();
 			}
 			break;
@@ -117,25 +121,43 @@ int main(){
 				getline(cin,observaciones);
 				cout<<"FECHA: ";
 				cin>>fecha;
+				
 				Historial h1(observaciones,fecha);
 				h1.anadir_historial(nombre);
 			}
 			break;
 
 			case 6:
-			{
-				
 				p.listar_pacientes();
+				
+			case 7:
+			{
+				int dia,hora;
+				string nombrec;
+				cout<<"DIA: ";
+				cin>>dia;
+				cout<<"\nHORA: ";
+				cin>>hora;
+				cout<<"\nPACIENTE A ASIGNAR: ";
+				cin.ignore();
+				getline(cin,nombrec);
+				
+				if (c.anadir_cita(dia,hora,nombrec)==false)
+					cout<<"ERROR. No se pudo completar la acción.\n";
 			}
 			break;
-
-			case  7:
+			
+			case 8:
+				c.listar_citas_hoy();
+			break;
+			
+			case 9:
 			{
 				string nombrecompleto;
 				cout<<"Introduce el nombre del paciente a modificar\n";
 				cin.ignore();
 				getline(cin,nombrecompleto);
-				p.modificar_paciente(nombrecompleto);
+				p.modificar_paciente(nombrecompleto);		
 			}
 			break;
 		}
