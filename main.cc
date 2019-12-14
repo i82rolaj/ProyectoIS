@@ -14,7 +14,7 @@ int main(){
 	Cita c;
 	
 	int opcion=0;
-	while(opcion!=10)
+	while(opcion!=11)
 	{
 		cout<<"Elige una opción:\n";
 		cout<<"1. Añadir paciente.\n";
@@ -26,7 +26,8 @@ int main(){
 		cout<<"7. Anadir cita.\n";
 		cout<<"8. Citas de hoy.\n";
 		cout<<"9. Modificar paciente.\n";
-		cout<<"10. Salir.\n";
+		cout<<"10. Borrar cita.\n";
+		cout<<"11. Salir.\n";
 
 		cin>>opcion;
 		switch(opcion)
@@ -163,6 +164,18 @@ int main(){
 				p.modificar_paciente(nombrecompleto);		
 			}
 			break;
+				
+			case 10:
+			{
+				string nombrecompleto;
+				cout<<"Introduce el nombre del paciente para borrar su cita\n";
+				cin.ignore();
+				getline(cin,nombrecompleto);
+				if(c.borrar_cita(nombrecompleto)==false)
+				{
+					cout<<"ERROR. No se pudo borrar la cita.\n";
+				}
+			}
 		}
 	}	
 }
