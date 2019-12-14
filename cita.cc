@@ -216,3 +216,106 @@ void Cita::listar_citas_hoy(){
 		}
 	} 
 }
+
+bool Cita::borrar_cita(string nombrecompleto)
+{
+	if(buscar_paciente(nombrecompleto)==true)
+	{
+		ofstream nuevo("aux.txt",ios::trunc);
+		fstream viejo("calendario.txt");
+		char DIA[30],H9[30],H10[30],H11[30],H12[30],H17[30],H18[30],H19[30];
+		string nh9,nh10,nh11,nh12,nh17,nh18,nh19;
+		nuevo<<string(DIA)<<",";
+		while(viejo.getline(DIA,30,','))
+		{
+			viejo.getline(H9,30,',');
+			viejo.getline(H10,30,',');
+			viejo.getline(H11,30,',');
+			viejo.getline(H12,30,',');
+			viejo.getline(H17,30,',');
+			viejo.getline(H18,30,',');
+			viejo.getline(H19,30,'\n');
+			nuevo<<string(DIA)<<",";
+			nh9=string(H9);
+			nh10=string(H10);
+			nh11=string(H11);
+			nh12=string(H12);
+			nh17=string(H17);
+			nh18=string(H18);
+			nh19=string(H19);
+			string hora;
+			if(nh9.find(nombrecompleto)==string::npos)
+			{
+				nuevo<<string(H9)<<",";
+			}
+			else
+			{
+				hora=nh9.substr(0,1);
+				nuevo<<hora<<",";
+			}
+			if(nh10.find(nombrecompleto)==string::npos)
+			{
+				nuevo<<string(H10)<<",";
+			}
+			else
+			{
+				hora=nh10.substr(0,2);
+				nuevo<<hora<<",";
+			}
+			if(nh11.find(nombrecompleto)==string::npos)
+			{
+				nuevo<<string(H11)<<",";
+			}
+			else
+			{
+				hora=nh11.substr(0,2);
+				nuevo<<hora<<",";
+			}
+			if(nh12.find(nombrecompleto)==string::npos)
+			{
+				nuevo<<string(H12)<<",";
+			}
+			else
+			{
+				hora=nh12.substr(0,2);
+				nuevo<<hora<<",";
+			}
+			if(nh17.find(nombrecompleto)==string::npos)
+			{
+				nuevo<<string(H17)<<",";
+			}
+			else
+			{
+				hora=nh17.substr(0,2);
+				nuevo<<hora<<",";
+			}
+			if(nh18.find(nombrecompleto)==string::npos)
+			{
+				nuevo<<string(H18)<<",";
+			}
+			else
+			{
+				hora=nh18.substr(0,2);
+				nuevo<<hora<<",";
+			}
+			if(nh19.find(nombrecompleto)==string::npos)
+			{
+				nuevo<<string(H19)<<"\n";
+			}
+			else
+			{
+				hora=nh19.substr(0,2);
+				nuevo<<hora<<"\n";
+			}
+		}
+		remove("calendario.txt");
+		rename("aux.txt","calendario.txt");
+		cout<<"Cita borrada con éxito.\n";
+		return true;
+	}
+	else
+	{
+		cout<<"ERROR. Ningún paciente con ese nombre.\n";
+		return false;
+	}
+}
