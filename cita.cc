@@ -225,7 +225,6 @@ bool Cita::borrar_cita(string nombrecompleto)
 		fstream viejo("calendario.txt");
 		char DIA[30],H9[30],H10[30],H11[30],H12[30],H17[30],H18[30],H19[30];
 		string nh9,nh10,nh11,nh12,nh17,nh18,nh19;
-		nuevo<<string(DIA)<<",";
 		while(viejo.getline(DIA,30,','))
 		{
 			viejo.getline(H9,30,',');
