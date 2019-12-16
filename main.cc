@@ -27,7 +27,8 @@ int main(){
 		cout<<"8. Citas de hoy.\n";
 		cout<<"9. Modificar paciente.\n";
 		cout<<"10. Borrar cita.\n";
-		cout<<"11. Salir.\n";
+		cout<<"11. Mostrar cita paciente\n";
+		cout<<"12. Salir.\n";
 
 		cin>>opcion;
 		switch(opcion)
@@ -119,11 +120,18 @@ int main(){
 				cout<<"NOMBRE y APELLIDOS: ";
 				cin.ignore();
 				getline(cin,nombre);
+				if(buscar_paciente(nombre)==false)
+				{
+					cout<<"ERROR, el paciente no está en la base de datos."<<endl;
+					break;
+				}
+				
+				cout<<"FECHA: ";
+				cin>>fecha;
 				cout<<"OBSERVACIONES: ";
 				cin.ignore();
 				getline(cin,observaciones);
-				cout<<"FECHA: ";
-				cin>>fecha;
+			
 				
 				Historial h1(observaciones,fecha);
 				h1.anadir_historial(nombre);
@@ -175,6 +183,20 @@ int main(){
 				{
 					cout<<"ERROR. No se pudo borrar la cita.\n";
 				}
+			}
+			break;
+
+			case 11:
+			{
+				string nombrecompleto;
+				cout<<"Introduce el nombre del paciente para borrar su cita\n";
+				cin.ignore();
+				getline(cin,nombrecompleto);
+				if(c.mostrar_cita_paciente(nombrecompleto)==false)
+				{
+					cout<<"ERROR,No tiene ninguna cita o no se encuentra el paciente registrado\n";
+				}
+
 			}
 		}
 	}	

@@ -318,3 +318,112 @@ bool Cita::borrar_cita(string nombrecompleto)
 		return false;
 	}
 }
+
+bool Cita::mostrar_cita_paciente(string nombrecompleto)
+{
+	if(buscar_paciente(nombrecompleto)==true)
+	{
+		char DIA[30],H9[30],H10[30],H11[30],H12[30],H17[30],H18[30],H19[30]; //variables para leer fichero
+	string nh9,nh10,nh11,nh12,nh17,nh18,nh19; //variables para guardar los char
+	int pos9,pos10,pos11,pos12,pos17,pos18,pos19; //variables para la posicion donde encuentra el nombre
+	string h9,h10,h11,h12,h17,h18,h19; //variables para hora
+	string nombre9,nombre10,nombre11,nombre12,nombre17,nombre18,nombre19; //variables para nombre
+	string dia;
+	ifstream fichero("calendario.txt");
+		if(!fichero)
+		{
+			cout<<"ERROR,no se ha podido abrir el fichero"<<endl;
+			return 0;
+		}
+		while(fichero.getline(DIA,30,','))
+		{
+			fichero.getline(H9,30,',');
+			fichero.getline(H10,30,',');
+			fichero.getline(H11,30,',');
+			fichero.getline(H12,30,',');
+			fichero.getline(H17,30,',');
+			fichero.getline(H18,30,',');
+			fichero.getline(H19,30,'\n');
+
+			dia=string(DIA);
+			nh9=string(H9);
+			nh10=string(H10);
+			nh11=string(H11);
+			nh12=string(H12);
+			nh17=string(H17);
+			nh18=string(H18);
+			nh19=string(H19);
+			if((pos9=nh9.find(nombrecompleto))!=-1)
+			{
+				 h9=nh9.substr(0,2);
+				 nombre9=nh9.substr(pos9,',');
+				cout<<"\n"<<dia;
+				cout<<"\nHora:"<<h9;
+				cout<<"\nPaciente: "<<nombre9;
+			}
+			if((pos10=nh10.find(nombrecompleto))!=-1)
+			{
+				 h10=nh10.substr(0,2);
+				string nombre10=nh10.substr(pos10,',');
+				cout<<"\n"<<dia;
+				cout<<"\nHora:"<<h10;
+				cout<<"\nPaciente: "<<nombre10;
+			}
+			if((pos11=nh11.find(nombrecompleto))!=-1)
+			{
+				 h11=nh11.substr(0,2);
+				 nombre11=nh11.substr(pos11-1,',');
+				cout<<"\n"<<dia;
+				cout<<"\nHora:"<<h11;
+				cout<<"\nPaciente: "<<nombre11;
+			}
+			if((pos12=nh12.find(nombrecompleto))!=-1)
+			{
+				 h12=nh12.substr(0,2);
+				 nombre12=nh12.substr(pos12,',');
+				cout<<"\n"<<dia;
+				cout<<"\nHora:"<<h12;
+				cout<<"\nPaciente: "<<nombre12;
+
+			}
+			if((pos17=nh17.find(nombrecompleto))!=-1)
+			{
+				 h17=nh17.substr(0,2);
+				 nombre17=nh17.substr(pos17,',');
+				cout<<"\n"<<dia;
+				cout<<"\nHora:"<<h17;
+				cout<<"\nPaciente: "<<nombre17;
+				
+			}
+			if((pos18=nh18.find(nombrecompleto))!=-1)
+			{
+				 h18=nh18.substr(0,2);
+				 nombre18=nh18.substr(pos18,',');
+				cout<<"\n"<<dia;
+				cout<<"\nHora:"<<h18;
+				cout<<"\nPaciente: "<<nombre18;
+			
+			}
+			if((pos19=nh19.find(nombrecompleto))!=-1)
+			{
+				 h19=nh19.substr(0,2);
+				nombre19=nh19.substr(pos19,',');
+				cout<<"\n"<<dia;
+				cout<<"\nHora:"<<h19;
+				cout<<"\nPaciente: "<<nombre19;
+				
+
+			}
+
+
+				
+			 	
+	 	}
+	 	return true;
+	 	fichero.close();
+	}
+	else
+	{
+		return false;
+	}
+}
