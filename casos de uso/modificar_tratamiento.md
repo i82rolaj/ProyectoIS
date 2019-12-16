@@ -1,6 +1,6 @@
 *Modificar tratamiento*  
 
-**ID:** 08  
+**ID:** 07  
 **Descripción:** Se modifica la información del tratamiento actual del paciente.  
 
 **Actores principales:** Secretario.  
@@ -11,9 +11,9 @@
 
 **Flujo principal:**  
 
-1. El secretario introduce el nombre y apellidos del paciente en un cuadro de búsqueda.
-2. El sistema muestra el tratamiento en curso.
-3. El secretario modifica la información referente al actual tratamiento del paciente.  
+1. El secretario introduce el nombre y apellidos del paciente en un cuadro de búsqueda
+2. El sistema solicita al usuario los nuevos datos del tratamiento.
+3. El secretario introduce los datos y se actualiza el tratamiento.  
 
 **Postcondición:** El tratamiento ve modificados sus datos y queda reflejada la nueva información.  
 
