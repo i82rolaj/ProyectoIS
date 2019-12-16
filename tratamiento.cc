@@ -51,15 +51,15 @@ bool Tratamiento::modificar_tratamiento(string nombrep)
 	{
 		cout<<"Introduce los nuevos datos del tratamiento"<<endl;
 		cout<<"DIAGNOSTICO: ";
-		cin.ignore();
-		getline(cin,diagnostico_);
+		cin>>diagnostico_;
 		cout<<"EN CURSO (1) O CERRADO(0): ";
 		cin>>en_curso_;
 		cout<<"MEDICACION: ";
 		cin.ignore();
-		getline(cin,medicacion_);
+		cin>>medicacion_;
 		cout<<"FECHA INICIO: ";
-		cin>>fecha_inicio_;
+		cin.ignore();
+		getline(cin,fecha_inicio_);
 		cout<<"FECHA FIN: ";
 		cin>>fecha_fin_;
 		cout<<"OBSERVACIONES: ";

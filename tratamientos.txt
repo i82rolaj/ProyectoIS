@@ -1,3 +1,2 @@
-Juanfran Romero Lavirgen,1,ccc,c,c,c,c
-Sofia Salas,0,b,bb,b,b,bbb
-
+Maria Ejemplo,0,Cefalea,Valium,16/12,20/01,Ninguna
+Sofia Salas,1,Ninguno,Ninguna,20/10,30/12,Ninguna

@@ -1,3 +1,4 @@
-Juanfran Romero Lavirgen,  ,  2/12/98,  67666,  ordoba,  España 
-Sofia Salas, , 0/10/99, 77788, ordoba, España
-
+Juanfran Romero,M,01/12/98,627085701,Ronda Ronda 34,España
+Sofia Salas,F,12/12/00,66667777,Montoro,España
+Maria Ejemplo,F,6/8/99,88888,Yoquese 30,Italia
+Jose Sanchez Yun,M,01/01/00,6565656,Pozoblanco 22,Marruecos

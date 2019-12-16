@@ -1,4 +1,3 @@
-Juanfran Romero Lavirgen,a venido a consulta,30/11/19,
-Sofia Salas,inguna,13/12,
-Juanfran Romero Lavirgen, nada,23/12/19,
-Sofia Salas,si,12/22/33,
+Juanfran Romero,Ha pasado por aqui,15/12
+Maria Ejemplo,Ha venido a consulta,16/12
+Sofia Salas,Lleva 1 mes sin venir,16/12

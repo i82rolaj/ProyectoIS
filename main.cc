@@ -14,7 +14,7 @@ int main(){
 	Cita c;
 	
 	int opcion=0;
-	while(opcion!=11)
+	while(opcion!=12)
 	{
 		cout<<"Elige una opción:\n";
 		cout<<"1. Añadir paciente.\n";
@@ -27,7 +27,7 @@ int main(){
 		cout<<"8. Citas de hoy.\n";
 		cout<<"9. Modificar paciente.\n";
 		cout<<"10. Borrar cita.\n";
-		cout<<"11. Mostrar cita paciente\n";
+		cout<<"11. Mostrar cita paciente.\n";
 		cout<<"12. Salir.\n";
 
 		cin>>opcion;
@@ -86,13 +86,13 @@ int main(){
 				cout<<"EN CURSO (1) O CERRADO(0): ";
 				cin>>en_curso;
 				cout<<"DIAGNOSTICO: ";
-				cin.ignore();
-				getline(cin,diagnostico);
+				cin>>diagnostico;
 				cout<<"MEDICACION: ";
 				cin.ignore();
-				getline(cin,medicacion);
+				cin>>medicacion;
 				cout<<"FECHA INICIO: ";
-				cin>>fecha_inicio;
+				cin.ignore();
+				getline(cin,fecha_inicio);
 				cout<<"FECHA FIN: ";
 				cin>>fecha_fin;
 				cout<<"OBSERVACIONES: ";
@@ -120,18 +120,11 @@ int main(){
 				cout<<"NOMBRE y APELLIDOS: ";
 				cin.ignore();
 				getline(cin,nombre);
-				if(buscar_paciente(nombre)==false)
-				{
-					cout<<"ERROR, el paciente no está en la base de datos."<<endl;
-					break;
-				}
+				cout<<"OBSERVACIONES: ";
 				
+				getline(cin,observaciones);
 				cout<<"FECHA: ";
 				cin>>fecha;
-				cout<<"OBSERVACIONES: ";
-				cin.ignore();
-				getline(cin,observaciones);
-			
 				
 				Historial h1(observaciones,fecha);
 				h1.anadir_historial(nombre);
@@ -185,7 +178,7 @@ int main(){
 				}
 			}
 			break;
-
+			
 			case 11:
 			{
 				string nombrecompleto;
@@ -195,9 +188,10 @@ int main(){
 				if(c.mostrar_cita_paciente(nombrecompleto)==false)
 				{
 					cout<<"ERROR,No tiene ninguna cita o no se encuentra el paciente registrado\n";
-				}
-
+				}				
 			}
+			break;
 		}
-	}	
+	}
+	cout<<"¡Hasta la proxima!\n";	
 }
