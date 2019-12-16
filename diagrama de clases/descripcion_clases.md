@@ -1,11 +1,11 @@
 *Descripción de las clases*  
 
 
-**PACIENTE:** Cada instancia de paciente tendrá asociada una y solo una instancia de Historial_medico. Si el paciente se elimina, también desaparecerá su historial médico (la existencia del historial no tiene sentido sin la existencia del paciente).
+**PACIENTE:** Cada instancia de paciente tendrá asociada ninguna o varias instancias de Historial_medico. Si el paciente se elimina, también desaparecerá su historial médico (la existencia del historial no tiene sentido sin la existencia del paciente).
 
 Cada instancia de paciente tendrá asociada ninguna o muchas instancias de la clase Tratamiento. Si se elimina el paciente, también desaparecerán todos sus tratamientos (la existencia del tratamiento no tiene sentido sin la existencia del paciente).
 
-Por último, cada paciente puede tener asociada una y solo una cita, pero si el paciente borra la cita no deja de existir ya que puede ser reservada por otro paciente diferente.
+Por último, cada paciente puede tener asociada una y varias citas, pero si el paciente borra la cita no deja de existir ya que puede ser reservada por otro paciente diferente.
 
 Sus atributos, junto a su tipo de dato son los siguientes:
 
@@ -30,28 +30,18 @@ Y sus operaciones:
 
 -buscar_paciente()
 
--listar_paciente()
+-listar_pacientes()
 
 -modificar_paciente()
-
--mostrar_cita_paciente()
 
 
 **HISTORIAL_MEDICO:** Cada instancia de esta clase refleja el historial médico de uno y solo un paciente. Tendrá los siguientes atributos:
 
-alergias: string
+observaciones: string
 
-operaciones_realizadas: string
-
-problemas_respiratorios: boolean
-
-problemas_cardiacos: boolean
-
-otros: string
+fecha: string
 
 Y las siguientes operaciones:
-
--actualizar_historial()
 
 -anadir_historial()
 
@@ -68,11 +58,11 @@ Sus operaciones:
 
 -anadir_cita()
 
--cancelar_cita()
+-borrar_cita()
 
--modificar_cita()
+-listar_citas_hoy()
 
--modificar_cita_paciente()
+-mostrar_cita_paciente()
 
 
 **TRATAMIENTO:** Cada instancia de esta clase se relaciona con una y solo una instancia de Paciente (un tratamiento determinado pertenece a un único paciente). Sus atributos son los siguientes:
