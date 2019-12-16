@@ -1,4 +1,2 @@
-# ProyectoIS
-Proyecto Ingeniería del SW: Juan F. Romero, Antonio J. Romero y Sofía Salas
-Se compila mediante:
+# COMPILACIÓN
 g++ paciente.cc cita.cc historial.cc tratamiento.cc main.cc -o main
