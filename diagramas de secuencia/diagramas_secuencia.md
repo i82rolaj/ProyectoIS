@@ -1,25 +1,25 @@
 # Diagramas de secuencia
 
 ## Añadir cita  
-![](https://i.imgur.com/RrnjTnO.jpg)
+![](https://i.imgur.com/PPClZ3e.jpg)
 
 ## Añadir historial  
-![](https://i.imgur.com/b6y8dfp.jpg)
+![](https://i.imgur.com/w3o3nLj.jpg)
 
 ## Añadir paciente  
-![](https://i.imgur.com/nEtKKPm.jpg)
+![](https://i.imgur.com/z7YRdv4.jpg)
 
 ## Añadir tratamiento  
-![](https://i.imgur.com/0Sc2USm.jpg)
+![](https://i.imgur.com/6LLiAe8.jpg)
 
 ## Borrar paciente  
-![](https://i.imgur.com/dxVg76v.jpg)
+![](https://i.imgur.com/Ht4mbCU.jpg)
 
 ## Buscar paciente  
 ![](https://i.imgur.com/dLl9wCa.jpg)
 
 ## Cancelar cita  
-![]( https://i.imgur.com/MXaSOCQ.jpg)
+![]( https://i.imgur.com/HGq2pWQ.jpg)
 
 ## Listar citas hoy  
 ![](https://i.imgur.com/CSMWZ3z.jpg)
@@ -27,11 +27,8 @@
 ## Listar pacientes  
 ![]( https://i.imgur.com/0v7r0We.jpg)
 
-## Modificar cita  
-![](https://i.imgur.com/oUToesd.jpg)
-
 ## Modificar  tratamiento  
-![]( https://i.imgur.com/B7Bbx3H.jpg)
+![]( https://i.imgur.com/1HIWGWP.jpg)
 
 ## Mostrar cita paciente  
 ![](https://i.imgur.com/rVg48LT.jpg)
