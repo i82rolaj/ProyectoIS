@@ -182,7 +182,7 @@ int main(){
 			case 11:
 			{
 				string nombrecompleto;
-				cout<<"Introduce el nombre del paciente para borrar su cita\n";
+				cout<<"Introduce el nombre del paciente para buscar su cita\n";
 				cin.ignore();
 				getline(cin,nombrecompleto);
 				if(c.mostrar_cita_paciente(nombrecompleto)==false)
